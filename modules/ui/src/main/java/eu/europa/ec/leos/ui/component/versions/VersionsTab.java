@@ -36,7 +36,9 @@ import eu.europa.ec.leos.i18n.MessageHelper;
 import eu.europa.ec.leos.model.action.VersionVO;
 import eu.europa.ec.leos.security.SecurityContext;
 import eu.europa.ec.leos.ui.event.DownloadClickedVersionRequestEvent;
+import eu.europa.ec.leos.ui.event.DownloadClickedVersionDocxRequestEvent;
 import eu.europa.ec.leos.ui.event.DownloadXmlVersionRequestEvent;
+import eu.europa.ec.leos.ui.event.DownloadDocxVersionRequestEvent;
 import eu.europa.ec.leos.ui.extension.CollapsibleEllipsisExtension;
 import eu.europa.ec.leos.ui.view.TriFunction;
 import eu.europa.ec.leos.web.event.view.document.ComparisonEvent;
@@ -74,6 +76,7 @@ public class VersionsTab<D extends XmlDocument> extends VerticalLayout {
     private RadioButtonGroup<String> typeRadioGroup;
     private TextField authorTextField;
     private Button downloadVersion;
+    private Button downloadDocxVersion;
     private SimpleFileDownloader simpleFileDownloader;
     private String versionToDownload;
 
@@ -161,6 +164,12 @@ public class VersionsTab<D extends XmlDocument> extends VerticalLayout {
             eventBus.post(new DownloadXmlVersionRequestEvent(versionToDownload));
         });
         downloadVersion.setVisible(false);
+
+        downloadDocxVersion.addClickListener((Button.ClickListener) event -> {
+            LOG.trace("downloadDocxVersion click() fired. Should start file download for version: {}", versionToDownload);
+            eventBus.post(new DownloadDocxVersionRequestEvent(versionToDownload));
+        });
+        downloadDocxVersion.setVisible(false);
     }
     
     public void setDownloadStreamResourceForVersion(StreamResource streamResource, String documentId) {
@@ -173,6 +182,12 @@ public class VersionsTab<D extends XmlDocument> extends VerticalLayout {
     void downloadVersion(DownloadClickedVersionRequestEvent event) {
         versionToDownload = event.getVersionId();
         downloadVersion.click();
+    }
+
+    @Subscribe
+    void downloadDocxVersion(DownloadClickedVersionDocxRequestEvent event) {
+        versionToDownload = event.getVersionId();
+        downloadDocxVersion.click();
     }
 
     private void setFilterDefaults() {

@@ -41,6 +41,7 @@ import eu.europa.ec.leos.security.LeosPermission;
 import eu.europa.ec.leos.security.SecurityContext;
 import eu.europa.ec.leos.services.support.VersionsUtil;
 import eu.europa.ec.leos.ui.event.DownloadClickedVersionRequestEvent;
+import eu.europa.ec.leos.ui.event.DownloadClickedVersionDocxRequestEvent;
 import eu.europa.ec.leos.ui.event.FetchMilestoneByVersionedReferenceEvent;
 import eu.europa.ec.leos.ui.view.TriFunction;
 import eu.europa.ec.leos.web.event.component.CleanComparedContentEvent;
@@ -176,6 +177,10 @@ public class VersionCard<D extends XmlDocument> extends VerticalLayout {
     private void downloadVersion(VersionVO version) {
         eventBus.post(new DownloadClickedVersionRequestEvent(version.getDocumentId()));
     }
+
+    private void downloadDocx(VersionVO version) {
+        eventBus.post(new DownloadClickedVersionDocxRequestEvent(version.getDocumentId()));
+    }
     
     private void viewVersion(VersionVO version) {
         eventBus.post(new ShowVersionRequestEvent(version.getDocumentId()));
@@ -210,9 +215,11 @@ public class VersionCard<D extends XmlDocument> extends VerticalLayout {
                     selectedItem -> restoreVersion(versionVO));
     
             boolean canDownload = securityContext.hasPermission(null, LeosPermission.CAN_DOWNLOAD_XML_COMPARISON);
-            if(canDownload){//menu.actions.download.docx
+            if(canDownload){
                 actionsMenuBar.createMenuItem(messageHelper.getMessage("menu.actions.download.version"),
-                        selectedItem -> downloadVersion(versionVO));
+                            selectedItem -> downloadVersion(versionVO));
+                actionsMenuBar.createMenuItem(messageHelper.getMessage("menu.actions.download.docx"),
+                        selectedItem -> downloadDocx(versionVO));
             }
         }
         if (versionVO.getVersionType() == VersionType.MAJOR) {
