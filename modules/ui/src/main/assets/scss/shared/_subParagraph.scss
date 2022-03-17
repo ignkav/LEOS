@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+
+$LIST_SPACING: 40px;
+
+//------------------------------- XML Styles --------------------------------//
+%xmlSubParagraph {
+    subparagraph {
+      display: block;
+
+      & > content > aknP, & > content > p {
+        @extend %paddedText;
+        display: block;
+      }
+    }
+
+    paragraph {
+      @extend %padSubParagraph;
+      @extend %padSubParagraphEditor;
+    }
+}
+
+%tocSubParagraph {
+  subparagraph > content > aknP, subparagraph > content > p {
+    @extend %clearTopText;
+  }
+  @extend  %padSubParagraph
+}
+
+%padSubParagraph {
+  // pad all subparagraphs of numbered paragraphs, except the first one which is already padded by the number tag
+  num ~ subparagraph > content > p::before, num ~ subparagraph > content > aknp::before {
+    @extend %padRight;
+  }
+  num + subparagraph > content > p::before, num + subparagraph > content > aknp::before {
+    display: none;
+  }
+}
+
+//------------------------------- Editor Styles -----------------------------//
+%editorSubParagraph {
+  ol > li {
+    & > p:first-child {
+      padding-top: 0;
+    }
+    & > p {
+      @extend %paddedText;
+    }
+    & > p:last-child {
+      padding-bottom: 0;
+    }
+  }
+  // pad all subparagraphs of numbered paragraphs, except the first one which is already padded by the number tag
+  ol > li[data-akn-name="aknNumberedParagraph"] {
+    & > p:not(:first-of-type)::before {
+      @extend %padRight;
+    }
+  }
+}
+
+%padSubParagraphEditor {
+  // pad all subparagraphs of numbered paragraphs, except the first one which is already padded by the number tag
+  num ~ .cke_editable > ol[data-akn-name=aknSubParagraphMandate] > li::before {
+    content: '';
+    margin-right: $LIST_SPACING;
+  }
+  num + .cke_editable > ol[data-akn-name=aknSubParagraphMandate] > li::before {
+    display: none;
+  }
+}
+
+//------------------------------- Showblock Styles --------------------------//
+%showblockSubParagraph {
+  ol > li > p {
+    @include blockOutline("SUBPARAGRAPH");
+  }
+  ol > li > p::after {
+    padding-left: 4px;
+  }
+  ol > li > h2 {
+    @include blockOutline("HEADING");
+  }
+}
+
+%padRight {
+  content: '';
+  margin-right: 40px;
+}

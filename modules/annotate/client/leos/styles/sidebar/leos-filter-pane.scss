@@ -1,0 +1,119 @@
+//
+// Copyright 2021 European Commission
+//
+// Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+// You may not use this work except in compliance with the Licence.
+// You may obtain a copy of the Licence at:
+//
+//     https://joinup.ec.europa.eu/software/page/eupl
+//
+// Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the Licence for the specific language governing permissions and limitations under the Licence.
+//
+
+.leos-filter-pane {
+  border: solid 1px $gray-lighter;
+  border-radius: 2px;
+  font-family: $sans-font-family;
+  font-weight: 300;
+  margin: -10px 0 .72em 0;
+  padding: 1em;
+  position: relative;
+  background-color: $body-background;
+  .leos-filter-pane__selected-filters {
+    display: flex;
+    max-height: 74px;
+    overflow-y: auto;
+    border: solid 1px #d3d3d3;
+    margin: -12px -13px 10px -13px;
+  }
+  .leos-filter-pane__list {
+    padding-left: 0;
+  }
+  .leos-filter-pane__list-item {
+    display: block;
+    padding-bottom: 10px;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  .leos-filter-pane__list-item-lbl {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+  }
+  .leos-filter-pane__list-item-value {
+    display: inline-block;
+    width: 75%;
+  }
+  .leos-filter-pane__list-item-button {
+    height: 22px;
+  }
+}
+
+.leos-input-option {
+  display: inline-block;
+  >input {
+    vertical-align: middle;
+  }
+  >span {
+    vertical-align: middle;
+  }
+}
+
+.leos-radio-option {
+  padding-right: 20px;
+}
+
+.leos-text-input {
+  width: 100%;
+  height: 25px;
+  border: solid 1px $gray-lighter;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+//override angular-multiple-select css
+.form-item-container {
+  .list-inline {
+    li {
+      margin: 3px;
+      padding-left: 2px;
+      padding-right: 2px;
+      span {
+        border: 1px solid $filter-choice-border-color;
+        background-color: $filter-choice-bg-color;
+      }
+      input {
+        width: 100px;
+      }
+    }
+  }
+}
+
+//override angular-multiple-select css for summary
+#filter-summary {
+  overflow-y: auto;
+  .form-item-container {
+    border: none;
+    .list-inline {
+      li {
+        span {
+          padding: 2px;
+          &.remove {
+            display: none;
+          }
+        }
+      }
+      input {
+        display: none;
+      }
+    }
+  }
+}
+
+//used to hide default Hypothesis search component as the functionality is needed to run leos-filter-pane filters
+.LEOS-HIDE {
+  display: none;
+}

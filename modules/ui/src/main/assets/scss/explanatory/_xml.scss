@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+
+@mixin xml {
+    @include exportPdf;
+
+    akomaNtoso {
+        @extend %defaultBoxSizing;
+        @extend %pageFont;
+
+        doc[name="EXPL_COUNCIL"] {
+            @extend %xmlCoverPage;
+            @extend %xmlSecondPage;
+            @extend %xmlExplSecondPage;
+        }
+        meta *{
+            display: none;
+        }
+
+        paragraph, level {
+                display: block;
+                position: relative;
+                padding-left: 40px;
+        }
+    }
+    
+    // CE styles
+    doc[name="EXPL_COUNCIL"] {
+        @extend %xmlLongTitle;
+        @extend %xmlHigherElements;
+
+        @extend %xmlAuthorialNote;
+        @extend %elementActions;
+        @extend %elementUserCoEdition;
+
+        @extend %xmlList;
+        @extend %xmlParagraph;
+        @extend %xmlCrossHeading;
+        @extend %xmlCrossHeadingNumber;
+        @extend %xmlDivision;
+        @extend %xmlLevel;
+        @extend %editorLevelNumber;
+        @extend %xmlSubParagraph;
+        @extend %xmlArticleAlinea;
+        @extend %compare;
+        @extend %documentFooter;
+
+        @include editor;
+        
+        display: block;
+    }
+
+    /*div.leos-explnatory-view div.leos-doc-content doc[name="EXPL_COUNCIL"] {
+        @extend %soft;
+    }*/
+}

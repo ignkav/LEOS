@@ -1,0 +1,350 @@
+@charset "UTF-8";
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+
+$GREEN_COLOR: #008000;
+$RED_COLOR_BACKGROUND: #FFD5D6;
+$GREEN_COLOR_BACKGROUND: #DEFDDB;
+$RED_COLOR: #FF0000;
+$BLACK_COLOR: #000000;
+$WHITE_COLOR: #FFFFFF;
+$BLUE_COLOR: blue;
+
+$GREEN_OUTLINE: 1px solid $GREEN_COLOR;
+$RED_OUTLINE: 1px solid $RED_COLOR;
+
+@mixin outlineStyle($OUTLINE, $BACKGROUND_COLOR) {
+  border: $OUTLINE;
+  background-color: $BACKGROUND_COLOR;
+}
+
+%contentAdded {
+  text-decoration: underline;
+}
+
+%contentRemoved {
+  text-decoration: underline line-through;
+}
+
+%contentChangeCN {
+  font-weight: bold;
+  color: black;
+}
+
+%tableChangeCN {
+  border: 2px solid $BLACK_COLOR;
+  background-color: $WHITE_COLOR;
+}
+
+%contentRemovedEC {
+  text-decoration: line-through;
+  color: $RED_COLOR;
+}
+
+%contentRemovedCN {
+  @extend %contentRemoved;
+  @extend %contentChangeCN;
+}
+
+%contentAddedEC {
+  @extend %contentAdded;
+  color: $GREEN_COLOR;
+}
+
+%contentAddedCN {
+  @extend %contentAdded;
+  @extend %contentChangeCN;
+}
+
+%contentMovedFrom {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+%numRemoved {
+  padding-top: 6pt;
+  border: 0pt;
+  float: left;
+}
+
+%compare {
+
+  .leos-content-removed {
+    @extend %contentRemovedEC;
+    * {
+      @extend %contentRemovedEC;
+    }
+  }
+
+  .leos-content-new:not([leos\:origin]) {
+    @extend %contentAddedEC;
+    * {
+      @extend %contentAddedEC;
+    }
+  }
+
+  .leos-content-new[leos\:softaction="move_from"] {
+    *:not([leos\:origin="ls"]):not(span) {
+      color: black;
+      text-decoration-color: white;
+    }
+  }
+
+  .leos-content-removed-cn, .leos-content-removed-cn[leos\:softaction="del"] {
+    @extend %contentRemovedCN;
+    * {
+      @extend %contentRemovedCN;
+    }
+  }
+
+  .leos-content-removed-cn[leos\:softaction="move_to"] {
+    & {
+      num[leos\:origin="cn"], num[leos\:origin="ec"] {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  subparagraph.leos-content-new-cn[leos\:indent-origin-num]::before,
+  alinea.leos-content-new-cn[leos\:indent-origin-num]::before,
+  paragraph.leos-content-new-cn[leos\:indent-origin-num][leos\:indent-unumbered-paragraph]::before {
+    content: attr(leos\:indent-origin-num);
+    @extend %contentRemovedCN;
+    @extend %numRemoved;
+  }
+
+  .leos-content-new-cn {
+    num.leos-content-removed-cn {
+      @extend %numRemoved;
+      @extend %contentRemovedCN;
+    }
+  }
+
+  .leos-content-new-cn[leos\:softaction="add"] {
+    & {
+      *[leos\:origin="cn"]:not(span):not(list), num:not([leos\:origin="ec"]) {
+        @extend %contentAddedCN;
+      }
+    }
+  }
+
+  .leos-content-new[leos\:softaction="add"] {
+    & {
+      *[leos\:origin="ls"]:not(span):not(list), num:not([leos\:origin="ec"]) {
+        @extend %contentAddedEC;
+      }
+    }
+  }
+
+  .leos-content-removed[leos\:softaction="move_to"], .leos-content-removed[leos\:softaction="del"] {
+    @extend %contentRemovedEC;
+    * {
+      @extend %contentRemovedEC;
+    }
+  }
+
+  .leos-content-new[leos\:softaction="move_from"] {
+    & {
+      *:not([leos\:origin="ls"])
+      :not(span)
+      :not(heading)
+      :not(authorialnote)
+      :not(.leos-content-new *) {
+        @extend %contentMovedFrom;
+      }
+
+      num[leos\:origin="ec"] {
+        padding-bottom: 0;
+      }
+
+      num[leos\:origin="ls"] {
+        @extend %contentAddedEC;
+      }
+
+      .leos-content-removed[leos\:softaction="del"] {
+        @extend %contentRemovedEC;
+
+        & {
+          *:not([leos\:origin="ls"]):not(span), num[leos\:origin="ec"] {
+            @extend %contentRemovedEC;
+          }
+        }
+      }
+
+      span.leos-content-removed {
+        @extend %contentRemovedEC;
+      }
+
+      .leos-content-new[leos\:softaction="add"] * {
+        @extend %contentAddedEC;
+      }
+    }
+  }
+
+  .leos-content-new-cn[leos\:softaction="move_from"] {
+    & {
+      *:not([leos\:origin="cn"])
+      :not(span)
+      :not(heading)
+      :not(authorialnote)
+      :not(.leos-content-new-cn *) {
+        @extend %contentMovedFrom;
+      }
+
+      num[leos\:origin="cn"], num[leos\:origin="ec"] {
+        padding-bottom: 0;
+      }
+
+      num[leos\:origin="cn"] {
+        @extend %contentAddedCN;
+      }
+
+      num.leos-content-removed-cn {
+        @extend %numRemoved;
+        @extend %contentRemovedCN;
+      }
+
+      .leos-content-removed-cn[leos\:softaction="del"] {
+        @extend %contentRemovedCN;
+
+        & {
+          *:not([leos\:origin="cn"]):not(span), num[leos\:origin="ec"] {
+            @extend %contentRemovedCN;
+          }
+        }
+      }
+
+      .leos-content-new-cn[leos\:softaction="add"] * {
+        @extend %contentAddedCN;
+      }
+    }
+  }
+}
+
+bill subparagraph {
+  &.leos-content-new-cn[leos\:indent-origin-num]::before {
+    margin-right: -20pt;
+  }
+}
+
+doc subparagraph {
+  &.leos-content-new-cn[leos\:indent-origin-num]::before {
+    margin-left: -20pt;
+  }
+}
+
+span.leos-content-removed {
+  @extend %contentRemovedEC;
+}
+
+span.leos-content-new-cn {
+  @extend %contentAddedCN;
+  * {
+    @extend %contentAddedCN;
+  }
+  authorialnote {
+    color: $BLUE_COLOR;
+  }
+}
+
+point[leos\:softaction="move_from"] > num:first-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.leos-content-modified {
+  display: block;
+}
+
+.leos-marker-content-removed, .leos-marker-content-added {
+  visibility: hidden;
+}
+
+//--------------------------------Compare IMG-----------------------------------/
+
+.leos-content-new img {
+  border: 3px solid $GREEN_COLOR !important;
+}
+
+.leos-content-new-cn img {
+  border: 3px solid $BLACK_COLOR !important;
+}
+
+.leos-content-removed img {
+  border: 3px solid $RED_COLOR !important;
+}
+
+.leos-content-removed-cn img {
+  filter: grayscale(100%);
+  opacity: 0.3;
+}
+
+//--------------------------------Compare FOOTNOTE-----------------------------------/
+
+.leos-authnote-table span.leos-content-new-cn * {
+  font-weight: bold;
+
+  a.ref2link-generated {
+    text-decoration: underline;
+    color: black;
+  }
+}
+
+.leos-authnote marker {
+  & {
+    span.leos-content-new-cn, span.leos-content-removed-cn {
+      font-weight:bold;
+      color: $BLUE_COLOR;
+    }
+    span.leos-content-removed-cn {
+      text-decoration: underline line-through;
+    }
+  }
+}
+
+//--------------------------------Compare TABLE-----------------------------------/
+
+table, tr, td, th {
+  &.leos-content-new {
+    @include outlineStyle($GREEN_OUTLINE, $GREEN_COLOR_BACKGROUND);
+  }
+
+  &.leos-content-removed {
+    @include outlineStyle($RED_OUTLINE, $RED_COLOR_BACKGROUND);
+  }
+
+  &.leos-content-new-cn {
+    @extend %tableChangeCN;
+  }
+
+  &.leos-content-removed-cn {
+    @extend %tableChangeCN;
+  }
+}
+
+.leos-content-removed table {
+  @include outlineStyle($RED_OUTLINE, $RED_COLOR_BACKGROUND);
+}
+
+.leos-content-new table {
+  @include outlineStyle($GREEN_OUTLINE, $GREEN_COLOR_BACKGROUND);
+}
+
+.leos-content-removed-cn table {
+  @extend %tableChangeCN;
+}
+
+.leos-content-new-cn table {
+  @extend %tableChangeCN;
+}

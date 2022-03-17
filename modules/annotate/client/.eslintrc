@@ -1,0 +1,20 @@
+{
+  "extends": "hypothesis",
+  "env": {
+    "es6": true
+  },
+  "globals": {
+    "Set": false
+  },
+  "plugins": [
+    "mocha"
+  ],
+  "rules": {
+    "curly": "off",
+    "mocha/no-exclusive-tests": "error",
+    "indent": ["error", 2, {
+      "ArrayExpression": "first",
+      "ObjectExpression": "first"
+    }]
+  }
+}

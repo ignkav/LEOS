@@ -1,0 +1,54 @@
+@mixin searchAndReplace {
+
+  $success-color: #b8f3af;
+  $failure-color: #fda6a9;
+  $search-highlight-color: #FFCD22;
+  $search-highlight-pin-color: #b6941f;
+
+  .v-caption-search.v-caption-inline-icon > .v-icon {
+    left: 58px;
+  }
+
+  .v-textfield-success {
+    background: $success-color;
+    color: valo-font-color($success-color);
+    padding-right: 60px;
+
+    ~ .leos-match-message {
+      color: green;
+    }
+  }
+
+  .v-textfield-failure {
+    background: $failure-color;
+    color: valo-font-color($failure-color);
+    padding-right: 70px;
+
+    ~ .leos-match-message {
+      color: red;
+    }
+  }
+
+  .leos-match-message {
+    position: absolute;
+    right: 5px;
+    line-height: 26px;
+  }
+
+  search-highlight {
+    background-color: $search-highlight-color;
+
+    &.non-replaceable {
+      background-color: lightgrey;
+    }
+
+    &.selected-match {
+      background-color: $LIGHT_BLUE;
+    }
+  }
+
+  .pin-search-highlight {
+    background: $search-highlight-pin-color;
+    height: 4px;
+  }
+}

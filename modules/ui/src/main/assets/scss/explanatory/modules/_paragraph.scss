@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+
+//------------------------------- XML Styles --------------------------------//
+%xmlParagraph {
+    paragraph {
+        @extend %paddedText;
+        //Second depth Point
+        list > .cke_editable > ol {
+            padding-left: 40px;
+        }
+    }
+}
+
+//------------------------------- Editor Styles -----------------------------//
+%editorParagraph {
+    ol[data-akn-name="aknAnnexList"][data-akn-element="paragraph"] {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+        & > li {
+            @extend %paddedText;
+            &:before {
+                content: none;
+            }
+            & > ol{
+                padding-left: 40px;
+            }
+        }
+    }
+}
+
+//------------------------------- Showblock Styles --------------------------//
+%showblockParagraph {
+    div[data-akn-name="level"] > p[data-akn-name="aknParagraph"] { // No showblocks for tables' cells content
+        @include blockOutline("PARAGRAPH");
+    }
+}

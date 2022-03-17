@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+
+$NUM_SPACING: 25px;
+$OUTLINE_BLUE: #47a4f5;
+
+//------------------------------- XML Styles --------------------------------//
+%xmlLevel {
+
+  level {
+    position: relative;
+    min-height: 36px;
+    display: grid;
+    grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+	padding: 0;
+    & > * {
+      grid-column: 2;
+    }
+
+    & > num {
+      @extend %simpleText;
+      display: block;
+      padding-right: 0px;
+      float: left;
+      padding-top: 6pt;
+      grid-column: 1;
+      height: fit-content;
+    }
+
+    num[leos\:softaction="del"] {
+      text-decoration: line-through;
+      color: $LIGHT_GREY;
+    }
+
+    num[leos\:softaction="add"] {
+      font-weight: bolder;
+    }
+
+    & > content {
+      clear: both;
+
+      & > table {
+        @extend %tableMargin;
+      }
+
+      & > aknP, & > p {
+        @extend %paddedText;
+        display: block;
+      }
+    }
+
+    & > list > point {
+      padding-left: 0px; // first level list must be aligned to the heading
+    }
+
+    heading {
+      padding-top: 6pt;
+      display: block;
+    }
+  }
+
+  level[leos\:depth="1"], level[leos\:depth="2"], level[leos\:depth="3"], level[leos\:depth="4"] {
+    & > num {
+      min-width: 72px;
+    }
+  }
+
+  level[leos\:depth="5"], level[leos\:depth="6"], level[leos\:depth="7"] {
+    & > num {
+      min-width: 110px;
+    }
+  }
+
+  level {
+    // second depth point (i).
+    point > list > .cke_editable > ol {
+      padding-left: 40px;
+    }
+  }
+
+}
+
+//------------------------------- Editor Styles -----------------------------//
+%editorLevel {
+  ol[data-akn-name="aknAnnexList"][data-akn-element="level"] {
+    list-style-type: none;
+    padding-left: 0; // override default list padding
+    margin: 0; // override default list margin
+    display: grid;
+    grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+
+    & > li {
+      @extend %paddedText;
+      display: block;
+
+      &:before {
+        color: $GREY_COLOR;
+        content: attr(data-akn-num);
+        float: left;
+        grid-column: 1;
+      }
+
+      & > * {
+        grid-column: 2;
+      }
+    }
+  }
+
+  .akn-element-heading {
+    text-align: left;
+    font-weight: normal;
+  }
+  .akn-element-heading:hover {
+    outline: 2px solid $OUTLINE_BLUE;
+  }
+
+  p[data-akn-name="aknLevelNum"], p[data-akn-name=aknContent] {
+      @extend %paddedText;
+  }
+}
+
+//------------------------------- Showblock Styles --------------------------//
+%showblockLevelParagraph {
+  div ~ ol {
+    @include blockOutline("POINT.");
+  }
+}

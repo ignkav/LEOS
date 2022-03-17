@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" name="package-mapping" content="leos:eu.europa.ec.leos.ui.view.workspace">
+</head>
+<body>
+
+<v-vertical-layout style-name="leos-card" height="135px" margin="false" spacing="false">
+
+    <v-horizontal-layout spacing="true" margin="false" style-name="leos-card-header" width-full="true">
+        <v-label size-auto="true" :center="" :expand="">&nbsp;</v-label>
+    </v-horizontal-layout>
+
+    <v-horizontal-layout spacing="true" margin="false" style-name="leos-card-details" size-full="true" height-full :expand="1.0">
+        <v-vertical-layout spacing="false" margin="false" height-full :expand="0.1">
+            <v-label style-name="leos-card-icon" icon="fonticon://Vaadin-Icons/e7e6"/>
+        </v-vertical-layout>
+
+        <v-vertical-layout margin="false" spacing="true" height-full :expand="0.65">
+            <v-label primary-style-name="leos-card-title" plain-text="" _id="title" size-full height-full :top :expand></v-label>
+            <v-horizontal-layout spacing="true" margin="false" size-full="true">
+                <v-label style-name="leos-caption-on-left leos-card-language" :expand=".3" plain-text="" _id="language"></v-label>
+                <v-label _id="revisionStatus" style-name="leos-caption-on-left" :expand=".3" :left></v-label>
+                <v-label :expand="1" width-full :right></v-label>
+            </v-horizontal-layout>
+            <v-horizontal-layout spacing="true" margin="false" size-full="true">
+                <v-label _id="revision" style-name="cloned-labels" :expand=".1" :bottom="" :left></v-label>
+                <v-label _id="originRef" style-name="cloned-labels" :expand=".1" :bottom="" :left></v-label>
+                <v-label :expand="1" width-full :right></v-label>
+            </v-horizontal-layout>
+        </v-vertical-layout>
+
+        <v-vertical-layout style-name="leos-card-actions" spacing="true" margin="false" _id="actions" :right="" height-full :expand="0.1">
+            <vaadin-button icon="fonticon://FontAwesome/f061" plain-text="" _id="openButton" :middle="" :center=""></vaadin-button>
+        </v-vertical-layout>
+    </v-horizontal-layout>
+
+    <v-css-layout spacing="false" margin="false" style-name="leos-card-footer" width-full="true" height="1.8em" :bottom="">
+            <v-label style-name="footer-caption" _id="createdCaption" :bottom="" :left></v-label>
+            <v-label _id="createdBy" :bottom="" :left></v-label>
+            <v-label  _id="createdOn" :bottom="" :left></v-label>
+            <v-label style-name="leos-card-footer-right" _id="updatedOn" :bottom="" :right=""></v-label>
+            <v-label style-name="leos-card-footer-right" _id="updatedBy" :bottom="" :right=""></v-label>
+            <v-label style-name="leos-card-footer-right footer-caption" _id="updatedCaption" :bottom="" :right=""></v-label>
+    </v-css-layout>
+
+</v-vertical-layout>
+</body>
+</html>

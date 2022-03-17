@@ -1,0 +1,1112 @@
+@charset "UTF-8";
+/**
+ * Copyright 2019 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or ΓÇô as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] [leos\:editable=true],
+doc[name="EXPL_MEMORANDUM"] .leos-placeholder, doc[name="EXPL_MEMORANDUM"] article, doc[name="EXPL_MEMORANDUM"] article[leos\:origin='ec'] paragraph:not(.selectable-element-paragraph), doc[name="EXPL_MEMORANDUM"] article[leos\:origin='ec'] alinea, doc[name="EXPL_MEMORANDUM"] article[leos\:origin='ec'] subparagraph, doc[name="EXPL_MEMORANDUM"] article[leos\:origin='ec'] point, doc[name="EXPL_MEMORANDUM"] article[leos\:origin='ec'] indent, doc[name="EXPL_MEMORANDUM"] article[leos\:origin='ec'] heading, doc[name="EXPL_MEMORANDUM"] part heading, doc[name="EXPL_MEMORANDUM"] aknTitle heading, doc[name="EXPL_MEMORANDUM"] chapter heading, doc[name="EXPL_MEMORANDUM"] section heading, doc[name="EXPL_MEMORANDUM"] division heading, doc[name="EXPL_MEMORANDUM"] block, doc[name="EXPL_MEMORANDUM"] citations[leos\:origin='ec'] citation, doc[name="EXPL_MEMORANDUM"] recitals[leos\:origin='ec'] recital, doc[name="EXPL_MEMORANDUM"] level, doc[name="EXPL_MEMORANDUM"] level[leos\:origin='ec'] > content, doc[name="EXPL_MEMORANDUM"] level[leos\:origin='ec'] subparagraph, doc[name="EXPL_MEMORANDUM"] level[leos\:origin='ec'] point, doc[name="EXPL_MEMORANDUM"] level[leos\:origin='ec'] indent, doc[name="EXPL_MEMORANDUM"] level[leos\:origin='ec'] alinea, doc[name="EXPL_MEMORANDUM"] level[leos\:origin='ec'] heading, doc[name="EXPL_MEMORANDUM"] paragraph, doc[name="EXPL_MEMORANDUM"] paragraph[leos\:origin='ec'] subparagraph, doc[name="EXPL_MEMORANDUM"] paragraph[leos\:origin='ec'] point, doc[name="EXPL_MEMORANDUM"] paragraph[leos\:origin='ec'] indent, doc[name="EXPL_MEMORANDUM"] paragraph[leos\:origin='ec'] alinea, doc[name="EXPL_MEMORANDUM"] paragraph[leos\:origin='ec'] heading {
+  border: solid 1px transparent;
+  margin: 0 -5px;
+  padding: 0px 5px;
+  min-height: auto;
+}
+doc[name="EXPL_MEMORANDUM"] article[leos\:origin='ec'] .leos-editable-content, doc[name="EXPL_MEMORANDUM"] citations[leos\:origin='ec'] .leos-editable-content, doc[name="EXPL_MEMORANDUM"] recitals[leos\:origin='ec'] .leos-editable-content, doc[name="EXPL_MEMORANDUM"] level[leos\:origin='ec'] .leos-editable-content, doc[name="EXPL_MEMORANDUM"] paragraph[leos\:origin='ec'] .leos-editable-content, doc[name="EXPL_MEMORANDUM"] .leos-editable-content {
+  background-color: #FFFAFF;
+  border-color: #ADBDCE;
+}
+doc[name="EXPL_MEMORANDUM"] article[leos\:origin='ec'] subparagraph {
+  display: block;
+}
+doc[name="EXPL_MEMORANDUM"] article[leos\:origin='ec'] point {
+  padding: 0 5px 0px 45px;
+}
+doc[name="EXPL_MEMORANDUM"] article[leos\:origin='ec'] indent {
+  padding: 0 5px 0px 45px;
+}
+doc[name="EXPL_MEMORANDUM"] level[leos\:origin='ec'] num {
+  border: solid 1px transparent;
+  min-height: auto;
+  display: block;
+}
+doc[name="EXPL_MEMORANDUM"] level[leos\:origin='ec'] subparagraph {
+  display: block;
+}
+doc[name="EXPL_MEMORANDUM"] level[leos\:origin='ec'] point > list > point {
+  padding-left: 45px;
+}
+doc[name="EXPL_MEMORANDUM"] level[leos\:origin='ec'] indent {
+  padding-left: 45px;
+}
+doc[name="EXPL_MEMORANDUM"] level[leos\:origin='ec'] heading {
+  padding: 7px 0 0 5px;
+}
+doc[name="EXPL_MEMORANDUM"] paragraph[leos\:origin='ec'] subparagraph {
+  display: block;
+}
+doc[name="EXPL_MEMORANDUM"] paragraph[leos\:origin='ec'] point {
+  padding: 0 5px 0px 45px;
+}
+doc[name="EXPL_MEMORANDUM"] paragraph[leos\:origin='ec'] indent {
+  padding: 0 5px 0px 45px;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-placeholder {
+  border-color: #ADBDCE;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-actions, doc[name="EXPL_MEMORANDUM"] .leos-actions-icon {
+  position: absolute;
+  width: 20px;
+  user-select: none;
+  color: #0065A2;
+  grid-column: 1;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-actions *, doc[name="EXPL_MEMORANDUM"] .leos-actions-icon * {
+  margin-top: 3px;
+  cursor: pointer;
+  display: none;
+  font-weight: normal;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] .leos-user-coedition {
+  position: absolute;
+  width: 20px;
+  margin-top: 8px;
+  user-select: none;
+  color: #0065A2;
+  display: inline-block;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-user-coedition * {
+  font-weight: normal;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-user-coedition-self-user {
+  color: #707070;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-user-coedition div {
+  position: absolute;
+  padding: 3px 7px;
+  width: auto;
+  white-space: nowrap;
+  font-size: 12px;
+  font-family: "Open Sans";
+  color: white;
+  background-color: rgba(51, 51, 51, 0.9);
+  -webkit-box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 999999;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-user-coedition a {
+  color: white;
+  text-decoration: underline;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-user-coedition a:hover {
+  color: #7bd2f6;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] authorialNote[marker] {
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: 0.8em;
+  vertical-align: baseline;
+  position: relative;
+  bottom: 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+  color: blue;
+}
+doc[name="EXPL_MEMORANDUM"] authorialNote[marker]:before {
+  content: attr(marker);
+  display: inline;
+}
+doc[name="EXPL_MEMORANDUM"] authorialNote[marker]:hover > aknp, doc[name="EXPL_MEMORANDUM"] authorialNote[marker]:hover > aknp:before, doc[name="EXPL_MEMORANDUM"] authorialNote[marker]:hover > p, doc[name="EXPL_MEMORANDUM"] authorialNote[marker]:hover > p:before {
+  display: block;
+}
+doc[name="EXPL_MEMORANDUM"] authorialNote[marker] > aknp, doc[name="EXPL_MEMORANDUM"] authorialNote[marker] > p {
+  display: none;
+  bottom: 0;
+  position: absolute;
+  color: black;
+  background-color: white;
+  border: blue 1px solid;
+  border-radius: 7px;
+  padding: 5px 15px;
+  left: -1.5em;
+  margin-bottom: 1.75em;
+  white-space: nowrap;
+}
+doc[name="EXPL_MEMORANDUM"] authorialNote[marker] > aknp:before, doc[name="EXPL_MEMORANDUM"] authorialNote[marker] > p:before {
+  bottom: 0;
+  position: absolute;
+  content: "";
+  border-top: 0.6em solid blue;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  left: 1.25em;
+  margin-bottom: -0.6em;
+}
+
+doc[name="EXPL_MEMORANDUM"] .cke_editable span .authorialnote {
+  font-size: 0.8em;
+  line-height: 0.8em;
+  font-weight: bold;
+  color: blue;
+  vertical-align: super;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] .leos-authnote-table {
+  display: table;
+  word-break: break-all;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-authnote {
+  display: table-row;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-authnote marker {
+  display: block;
+  font-size: 0.7em;
+  vertical-align: baseline;
+  position: relative;
+  bottom: 0.5em;
+  font-weight: bold;
+  color: blue;
+  float: left;
+  padding-bottom: 1em;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-authnote text {
+  display: block;
+  word-break: keep-all;
+  margin-left: 1.2em;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-authnote a.ref2link-generated {
+  text-decoration: underline;
+  color: black;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-authnote[id] {
+  cursor: pointer;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+akomaNtoso {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+  font-style: normal;
+  font-weight: normal;
+  text-align: justify;
+  word-wrap: break-word;
+  color: black;
+  line-height: 1.25em;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+akomaNtoso doc[name="EXPL_MEMORANDUM"] coverPage {
+  position: relative;
+  display: block;
+  margin: 0.5cm 0.5cm 0.5cm 0.8%;
+  width: 21cm;
+  min-height: 29.7cm;
+  padding: 2cm 2.5cm;
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
+  white-space: normal;
+  background-color: white;
+}
+
+akomaNtoso doc[name="EXPL_MEMORANDUM"] > :not(coverPage) {
+  display: block;
+  position: relative;
+  width: 21cm;
+  white-space: normal;
+  background-color: white;
+  padding-left: 2.5cm;
+  padding-right: 2.5cm;
+  margin-left: 0.8%;
+  margin-right: auto;
+  box-shadow: 0 11px 11px rgba(0, 0, 0, 0.5);
+}
+akomaNtoso doc[name="EXPL_MEMORANDUM"] > preface {
+  padding-top: 2cm;
+}
+akomaNtoso doc[name="EXPL_MEMORANDUM"] > :last-child {
+  padding-bottom: 2cm;
+  margin-bottom: 0.5cm;
+}
+akomaNtoso doc[name="EXPL_MEMORANDUM"] > mainBody {
+  min-height: calc(29.7cm - 125px);
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] longTitle > aknp > *, doc[name="EXPL_MEMORANDUM"] longTitle > p > *, akomaNtoso doc[name="EXPL_MEMORANDUM"] coverPage container[name=docLabel] > *, doc[name="EXPL_MEMORANDUM"] blockContainer > aknP, doc[name="EXPL_MEMORANDUM"] blockContainer > p, doc[name="EXPL_MEMORANDUM"] .cke_editable p[data-akn-name="aknParagraph"], doc[name="EXPL_MEMORANDUM"] tblock > num, doc[name="EXPL_MEMORANDUM"] tblock > heading {
+  margin: 0;
+}
+
+doc[name="EXPL_MEMORANDUM"] longTitle > aknp > *, doc[name="EXPL_MEMORANDUM"] longTitle > p > *, akomaNtoso doc[name="EXPL_MEMORANDUM"] coverPage container[name=docLabel] > *, doc[name="EXPL_MEMORANDUM"] blockContainer > aknP, doc[name="EXPL_MEMORANDUM"] blockContainer > p, doc[name="EXPL_MEMORANDUM"] .cke_editable p[data-akn-name="aknParagraph"] {
+  padding-top: 6pt;
+  padding-bottom: 6pt;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] longTitle {
+  font-weight: bold;
+  text-align: center;
+}
+akomaNtoso doc[name="EXPL_MEMORANDUM"] coverPage longTitle > aknp, doc[name="EXPL_MEMORANDUM"] longTitle > aknp, akomaNtoso doc[name="EXPL_MEMORANDUM"] coverPage longTitle > p, doc[name="EXPL_MEMORANDUM"] longTitle > p {
+  text-decoration: none;
+  display: block;
+}
+doc[name="EXPL_MEMORANDUM"] longTitle > aknp > *, doc[name="EXPL_MEMORANDUM"] longTitle > p > * {
+  display: block;
+}
+doc[name="EXPL_MEMORANDUM"] longTitle > aknp > docstage, doc[name="EXPL_MEMORANDUM"] longTitle > p > docstage {
+  font-weight: normal;
+}
+doc[name="EXPL_MEMORANDUM"] longTitle > aknp > doctype, doc[name="EXPL_MEMORANDUM"] longTitle > p > doctype {
+  text-transform: uppercase;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] .cke_editable *[contenteditable="false"] {
+  color: #808080;
+}
+doc[name="EXPL_MEMORANDUM"] .cke_editable *[contenteditable="true"] {
+  color: black;
+}
+
+doc[name="EXPL_MEMORANDUM"] .leos-editor-focus.cke_editable {
+  background-color: #FFFAFD;
+  border-color: #ADBDCE;
+  margin-top: 40px;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-editor-focus-double.cke_editable {
+  background-color: #FFFAFD;
+  border-color: #ADBDCE;
+  margin-top: 80px;
+}
+
+doc[name="EXPL_MEMORANDUM"] .cke_editable .cke_widget_wrapper:hover .cke_widget_editable, doc[name="EXPL_MEMORANDUM"] .cke_editable .cke_widget_wrapper:hover .cke_widget_element {
+  outline: 2px solid #AACCEE;
+}
+
+akomaNtoso *,
+akomaNtoso *:before,
+akomaNtoso *:after {
+  box-sizing: border-box;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] table {
+  border-collapse: collapse;
+  border-color: grey;
+  empty-cells: show;
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+}
+doc[name="EXPL_MEMORANDUM"] table aknP,
+doc[name="EXPL_MEMORANDUM"] table p {
+  display: block;
+}
+doc[name="EXPL_MEMORANDUM"] table > caption {
+  display: table-caption;
+  text-align: center;
+}
+doc[name="EXPL_MEMORANDUM"] table * > td, doc[name="EXPL_MEMORANDUM"] table th {
+  border: 1px solid grey;
+}
+doc[name="EXPL_MEMORANDUM"] table * > tr:first-child th, doc[name="EXPL_MEMORANDUM"] table tr:first-child td {
+  border-top: 1px solid black;
+}
+doc[name="EXPL_MEMORANDUM"] table * > tr:last-child th, doc[name="EXPL_MEMORANDUM"] table tr:last-child td {
+  border-bottom: 1px solid black;
+}
+doc[name="EXPL_MEMORANDUM"] table * > tr td:first-child, doc[name="EXPL_MEMORANDUM"] table tr th:first-child {
+  border-left: 1px solid black;
+}
+doc[name="EXPL_MEMORANDUM"] table * > tr td:last-child, doc[name="EXPL_MEMORANDUM"] table tr th:last-child {
+  border-right: 1px solid black;
+}
+doc[name="EXPL_MEMORANDUM"] table > tr {
+  display: table-row;
+}
+doc[name="EXPL_MEMORANDUM"] table > tr:first-child {
+  display: table-header-group;
+  font-weight: bold;
+}
+doc[name="EXPL_MEMORANDUM"] table td, doc[name="EXPL_MEMORANDUM"] table th {
+  display: table-cell;
+}
+doc[name="EXPL_MEMORANDUM"] table td > aknP, doc[name="EXPL_MEMORANDUM"] table td > p, doc[name="EXPL_MEMORANDUM"] table th > aknP, doc[name="EXPL_MEMORANDUM"] table th > p {
+  padding: 5px;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+akomaNtoso doc[name="EXPL_MEMORANDUM"] coverPage {
+  display: block;
+}
+akomaNtoso doc[name="EXPL_MEMORANDUM"] coverPage img {
+  width: 326px;
+  height: 86px;
+}
+akomaNtoso doc[name="EXPL_MEMORANDUM"] coverPage container[name=language] {
+  font-weight: bold;
+  position: absolute;
+  font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 24pt;
+  bottom: 2cm;
+}
+akomaNtoso doc[name="EXPL_MEMORANDUM"] coverPage container[name=language]:before {
+  content: attr(data-lang);
+  float: left;
+  margin-left: -1.2cm;
+}
+akomaNtoso doc[name="EXPL_MEMORANDUM"] coverPage container[name=language]:after {
+  content: attr(data-lang);
+  float: right;
+  margin-left: 15.8cm;
+}
+akomaNtoso doc[name="EXPL_MEMORANDUM"] coverPage container[name=logo] {
+  padding-bottom: 4.65cm;
+  display: inline-block;
+}
+akomaNtoso doc[name="EXPL_MEMORANDUM"] coverPage container[name=docLabel] > * {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] .guidance-green-block {
+  display: block;
+  color: green;
+}
+doc[name="EXPL_MEMORANDUM"] .guidance-green-inline {
+  display: inline;
+  color: green;
+}
+doc[name="EXPL_MEMORANDUM"] citation guidance.guidance-green-block {
+  text-align: right;
+  padding-right: 100px;
+}
+doc[name="EXPL_MEMORANDUM"] recital guidance.guidance-green-block {
+  text-align: left;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] .leos-content-new:not([leos\:origin]), doc[name="EXPL_MEMORANDUM"] .leos-content-new:not([leos\:origin]) *, doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="add"] *[leos\:origin="ls"]:not(span):not(list), doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="add"] num:not([leos\:origin="ec"]), doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="move_from"] num[leos\:origin="ls"], doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="move_from"] .leos-content-new[leos\:softaction="add"] *, doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="add"] *[leos\:origin="cn"]:not(span):not(list), doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="add"] num:not([leos\:origin="ec"]), doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] num[leos\:origin="cn"], doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] .leos-content-new-cn[leos\:softaction="add"] *, span.leos-content-new-cn, span.leos-content-new-cn * {
+  text-decoration: underline;
+}
+
+doc[name="EXPL_MEMORANDUM"] .leos-content-removed-cn, doc[name="EXPL_MEMORANDUM"] .leos-content-removed-cn[leos\:softaction="del"], doc[name="EXPL_MEMORANDUM"] .leos-content-removed-cn *, doc[name="EXPL_MEMORANDUM"] .leos-content-removed-cn[leos\:softaction="del"] *, doc[name="EXPL_MEMORANDUM"] subparagraph.leos-content-new-cn[leos\:indent-origin-num]::before,
+doc[name="EXPL_MEMORANDUM"] alinea.leos-content-new-cn[leos\:indent-origin-num]::before,
+doc[name="EXPL_MEMORANDUM"] paragraph.leos-content-new-cn[leos\:indent-origin-num][leos\:indent-unumbered-paragraph]::before, doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn num.leos-content-removed-cn, doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] num.leos-content-removed-cn, doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] .leos-content-removed-cn[leos\:softaction="del"], doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] .leos-content-removed-cn[leos\:softaction="del"] *:not([leos\:origin="cn"]):not(span), doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] .leos-content-removed-cn[leos\:softaction="del"] num[leos\:origin="ec"] {
+  text-decoration: underline line-through;
+}
+
+doc[name="EXPL_MEMORANDUM"] .leos-content-removed-cn, doc[name="EXPL_MEMORANDUM"] .leos-content-removed-cn[leos\:softaction="del"], doc[name="EXPL_MEMORANDUM"] .leos-content-removed-cn *, doc[name="EXPL_MEMORANDUM"] .leos-content-removed-cn[leos\:softaction="del"] *, doc[name="EXPL_MEMORANDUM"] subparagraph.leos-content-new-cn[leos\:indent-origin-num]::before,
+doc[name="EXPL_MEMORANDUM"] alinea.leos-content-new-cn[leos\:indent-origin-num]::before,
+doc[name="EXPL_MEMORANDUM"] paragraph.leos-content-new-cn[leos\:indent-origin-num][leos\:indent-unumbered-paragraph]::before, doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn num.leos-content-removed-cn, doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] num.leos-content-removed-cn, doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] .leos-content-removed-cn[leos\:softaction="del"], doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] .leos-content-removed-cn[leos\:softaction="del"] *:not([leos\:origin="cn"]):not(span), doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] .leos-content-removed-cn[leos\:softaction="del"] num[leos\:origin="ec"], doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="add"] *[leos\:origin="cn"]:not(span):not(list), doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="add"] num:not([leos\:origin="ec"]), doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] num[leos\:origin="cn"], doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] .leos-content-new-cn[leos\:softaction="add"] *, span.leos-content-new-cn, span.leos-content-new-cn * {
+  font-weight: bold;
+  color: black;
+}
+
+table.leos-content-new-cn, tr.leos-content-new-cn, td.leos-content-new-cn, th.leos-content-new-cn, table.leos-content-removed-cn, tr.leos-content-removed-cn, td.leos-content-removed-cn, th.leos-content-removed-cn, .leos-content-removed-cn table, .leos-content-new-cn table {
+  border: 2px solid #000000;
+  background-color: #FFFFFF;
+}
+
+doc[name="EXPL_MEMORANDUM"] .leos-content-removed, doc[name="EXPL_MEMORANDUM"] .leos-content-removed *, doc[name="EXPL_MEMORANDUM"] .leos-content-removed[leos\:softaction="move_to"], doc[name="EXPL_MEMORANDUM"] .leos-content-removed[leos\:softaction="del"], doc[name="EXPL_MEMORANDUM"] .leos-content-removed[leos\:softaction="move_to"] *, doc[name="EXPL_MEMORANDUM"] .leos-content-removed[leos\:softaction="del"] *, doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="move_from"] .leos-content-removed[leos\:softaction="del"], doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="move_from"] .leos-content-removed[leos\:softaction="del"] *:not([leos\:origin="ls"]):not(span), doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="move_from"] .leos-content-removed[leos\:softaction="del"] num[leos\:origin="ec"], doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="move_from"] span.leos-content-removed, span.leos-content-removed {
+  text-decoration: line-through;
+  color: #FF0000;
+}
+
+doc[name="EXPL_MEMORANDUM"] .leos-content-new:not([leos\:origin]), doc[name="EXPL_MEMORANDUM"] .leos-content-new:not([leos\:origin]) *, doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="add"] *[leos\:origin="ls"]:not(span):not(list), doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="add"] num:not([leos\:origin="ec"]), doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="move_from"] num[leos\:origin="ls"], doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="move_from"] .leos-content-new[leos\:softaction="add"] * {
+  color: #008000;
+}
+
+doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="move_from"] *:not([leos\:origin="ls"])
+:not(span)
+:not(heading)
+:not(authorialnote)
+:not(.leos-content-new *), doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] *:not([leos\:origin="cn"])
+:not(span)
+:not(heading)
+:not(authorialnote)
+:not(.leos-content-new-cn *) {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+doc[name="EXPL_MEMORANDUM"] subparagraph.leos-content-new-cn[leos\:indent-origin-num]::before,
+doc[name="EXPL_MEMORANDUM"] alinea.leos-content-new-cn[leos\:indent-origin-num]::before,
+doc[name="EXPL_MEMORANDUM"] paragraph.leos-content-new-cn[leos\:indent-origin-num][leos\:indent-unumbered-paragraph]::before, doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn num.leos-content-removed-cn, doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] num.leos-content-removed-cn, div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new num.leos-content-soft-removed, subparagraph.leos-content-soft-new[leos\:indent-origin-num]::before,
+alinea.leos-content-soft-new[leos\:indent-origin-num]::before,
+paragraph.leos-content-soft-new[leos\:indent-origin-num][leos\:indent-unumbered-paragraph]::before {
+  padding-top: 6pt;
+  border: 0pt;
+  float: left;
+}
+
+doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="move_from"] *:not([leos\:origin="ls"]):not(span) {
+  color: black;
+  text-decoration-color: white;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-content-removed-cn[leos\:softaction="move_to"] num[leos\:origin="cn"], doc[name="EXPL_MEMORANDUM"] .leos-content-removed-cn[leos\:softaction="move_to"] num[leos\:origin="ec"] {
+  padding-bottom: 0;
+}
+doc[name="EXPL_MEMORANDUM"] subparagraph.leos-content-new-cn[leos\:indent-origin-num]::before,
+doc[name="EXPL_MEMORANDUM"] alinea.leos-content-new-cn[leos\:indent-origin-num]::before,
+doc[name="EXPL_MEMORANDUM"] paragraph.leos-content-new-cn[leos\:indent-origin-num][leos\:indent-unumbered-paragraph]::before {
+  content: attr(leos\:indent-origin-num);
+}
+doc[name="EXPL_MEMORANDUM"] .leos-content-new[leos\:softaction="move_from"] num[leos\:origin="ec"] {
+  padding-bottom: 0;
+}
+doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] num[leos\:origin="cn"], doc[name="EXPL_MEMORANDUM"] .leos-content-new-cn[leos\:softaction="move_from"] num[leos\:origin="ec"] {
+  padding-bottom: 0;
+}
+
+bill subparagraph.leos-content-new-cn[leos\:indent-origin-num]::before {
+  margin-right: -20pt;
+}
+
+doc subparagraph.leos-content-new-cn[leos\:indent-origin-num]::before {
+  margin-left: -20pt;
+}
+
+span.leos-content-new-cn authorialnote {
+  color: blue;
+}
+
+point[leos\:softaction="move_from"] > num:first-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.leos-content-modified {
+  display: block;
+}
+
+.leos-marker-content-removed, .leos-marker-content-added {
+  visibility: hidden;
+}
+
+.leos-content-new img {
+  border: 3px solid #008000 !important;
+}
+
+.leos-content-new-cn img {
+  border: 3px solid #000000 !important;
+}
+
+.leos-content-removed img {
+  border: 3px solid #FF0000 !important;
+}
+
+.leos-content-removed-cn img {
+  filter: grayscale(100%);
+  opacity: 0.3;
+}
+
+.leos-authnote-table span.leos-content-new-cn * {
+  font-weight: bold;
+}
+.leos-authnote-table span.leos-content-new-cn * a.ref2link-generated {
+  text-decoration: underline;
+  color: black;
+}
+
+.leos-authnote marker span.leos-content-new-cn, .leos-authnote marker span.leos-content-removed-cn {
+  font-weight: bold;
+  color: blue;
+}
+.leos-authnote marker span.leos-content-removed-cn {
+  text-decoration: underline line-through;
+}
+
+table.leos-content-new, tr.leos-content-new, td.leos-content-new, th.leos-content-new {
+  border: 1px solid #008000;
+  background-color: #DEFDDB;
+}
+table.leos-content-removed, tr.leos-content-removed, td.leos-content-removed, th.leos-content-removed {
+  border: 1px solid #FF0000;
+  background-color: #FFD5D6;
+}
+
+.leos-content-removed table {
+  border: 1px solid #FF0000;
+  background-color: #FFD5D6;
+}
+
+.leos-content-new table {
+  border: 1px solid #008000;
+  background-color: #DEFDDB;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] img:before {
+  content: "Image preview not available: \aTitle: " attr(title) "\a Alternative: " attr(alt);
+  white-space: pre;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-removed[leos\:softaction="move_to"] *:not([leos\:origin="cn"]):not(span), div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-removed[leos\:softaction="move_to"] num[leos\:origin="ec"], div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-removed[leos\:softaction="del"] *:not([leos\:origin="cn"]):not(span), div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-removed[leos\:softaction="del"] num[leos\:origin="cn"], div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new num.leos-content-soft-removed, subparagraph.leos-content-soft-new[leos\:indent-origin-num]::before,
+alinea.leos-content-soft-new[leos\:indent-origin-num]::before,
+paragraph.leos-content-soft-new[leos\:indent-origin-num][leos\:indent-unumbered-paragraph]::before, span.leos-content-soft-removed, span.leos-content-soft-removed *, table.leos-content-soft-removed, table[leos\:softaction="del"], table[leos\:softaction="move_to"], tr.leos-content-soft-removed, tr[leos\:softaction="del"], tr[leos\:softaction="move_to"], td.leos-content-soft-removed, td[leos\:softaction="del"], td[leos\:softaction="move_to"], th.leos-content-soft-removed, th[leos\:softaction="del"], th[leos\:softaction="move_to"], .leos-content-soft-removed table, [leos\:softaction="del"] table,
+[leos\:softaction="move_to"] table {
+  text-decoration: line-through;
+  color: #A7A7A7;
+}
+
+div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new[leos\:softaction="add"] *[leos\:origin="cn"]:not(span):not(list), div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new[leos\:softaction="add"] num:not([leos\:origin="ec"]), div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new[leos\:softaction="move_from"] num[leos\:origin="cn"], div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new[leos\:softaction="move_from"] .leos-content-soft-new *, span.leos-content-soft-new, span.leos-content-soft-new *, table.leos-content-soft-new, table[leos\:softaction="add"], table[leos\:softaction="move_from"], tr.leos-content-soft-new, tr[leos\:softaction="add"], tr[leos\:softaction="move_from"], td.leos-content-soft-new, td[leos\:softaction="add"], td[leos\:softaction="move_from"], th.leos-content-soft-new, th[leos\:softaction="add"], th[leos\:softaction="move_from"], .leos-content-soft-new table, [leos\:softaction="add"] table,
+[leos\:softaction="move_from"] table {
+  font-weight: bold;
+}
+
+div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new[leos\:softaction="move_from"] *:not([leos\:origin="cn"]):not(span):not(heading):not(authorialnote) {
+  font-weight: normal;
+}
+
+div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new[leos\:softaction="add"] num[leos\:origin="cn"], div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new[leos\:softaction="add"] num[leos\:origin="ec"] {
+  padding-bottom: 0;
+}
+div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-removed[leos\:softaction="move_to"] num[leos\:origin="cn"], div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-removed[leos\:softaction="move_to"] num[leos\:origin="ec"] {
+  padding-bottom: 0;
+}
+div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new .leos-content-soft-removed[leos\:softaction="move_to"] *:not([leos\:origin="cn"]):not(span), div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new .leos-content-soft-removed[leos\:softaction="move_to"] num[leos\:origin="cn"],
+div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new .leos-content-soft-removed[leos\:softaction="del"] *:not([leos\:origin="cn"]):not(span),
+div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new .leos-content-soft-removed[leos\:softaction="del"] num[leos\:origin="cn"] {
+  text-decoration: line-through;
+}
+div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new[leos\:softaction="move_from"] num[leos\:origin="cn"], div.leos-memorandum-view div.leos-doc-content doc[name="EXPL_MEMORANDUM"] .leos-content-soft-new[leos\:softaction="move_from"] num[leos\:origin="ec"] {
+  padding-bottom: 0;
+}
+
+bill subparagraph.leos-content-soft-new[leos\:indent-origin-num]::before {
+  margin-right: -20pt;
+}
+
+doc subparagraph.leos-content-soft-new[leos\:indent-origin-num]::before {
+  margin-left: -20pt;
+}
+
+subparagraph.leos-content-soft-new[leos\:indent-origin-num]::before,
+alinea.leos-content-soft-new[leos\:indent-origin-num]::before,
+paragraph.leos-content-soft-new[leos\:indent-origin-num][leos\:indent-unumbered-paragraph]::before {
+  content: attr(leos\:indent-origin-num);
+}
+
+.leos-content-soft-new img, [leos\:softaction="add"] img,
+[leos\:softaction="move_from"] img {
+  border: 3px solid;
+}
+
+.leos-content-soft-removed img, [leos\:softaction="del"] img,
+[leos\:softaction="move_to"] img {
+  border: 2px dotted;
+}
+
+table.leos-content-soft-new, table[leos\:softaction="add"], table[leos\:softaction="move_from"], tr.leos-content-soft-new, tr[leos\:softaction="add"], tr[leos\:softaction="move_from"], td.leos-content-soft-new, td[leos\:softaction="add"], td[leos\:softaction="move_from"], th.leos-content-soft-new, th[leos\:softaction="add"], th[leos\:softaction="move_from"] {
+  border: 3px solid;
+}
+table.leos-content-soft-removed, table[leos\:softaction="del"], table[leos\:softaction="move_to"], tr.leos-content-soft-removed, tr[leos\:softaction="del"], tr[leos\:softaction="move_to"], td.leos-content-soft-removed, td[leos\:softaction="del"], td[leos\:softaction="move_to"], th.leos-content-soft-removed, th[leos\:softaction="del"], th[leos\:softaction="move_to"] {
+  border: 2px dotted;
+}
+
+.leos-content-soft-removed table, [leos\:softaction="del"] table,
+[leos\:softaction="move_to"] table {
+  border: 2px dotted;
+}
+
+.leos-content-soft-new table, [leos\:softaction="add"] table,
+[leos\:softaction="move_from"] table {
+  border: 3px solid;
+}
+
+.leos-authnote-table span.leos-content-soft-new * {
+  font-weight: bold;
+}
+.leos-authnote-table span.leos-content-soft-new * a.ref2link-generated {
+  text-decoration: underline;
+  color: black;
+}
+
+.leos-authnote marker span.leos-content-soft-new,
+.leos-authnote marker span.leos-content-soft-removed {
+  font-weight: bold;
+  color: blue;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or â€“ as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] blockContainer aknP, doc[name="EXPL_MEMORANDUM"] blockContainer p {
+  display: block;
+}
+
+doc[name="EXPL_MEMORANDUM"] .cke_editable.cke_show_blocks div[data-akn-name="blockContainer"] > p[data-akn-name="aknParagraph"] {
+  position: relative;
+  outline: 1px dotted #808080;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding: 24px 0 8px 4px;
+}
+doc[name="EXPL_MEMORANDUM"] .cke_editable.cke_show_blocks div[data-akn-name="blockContainer"] > p[data-akn-name="aknParagraph"]:after {
+  content: "PARAGRAPH";
+  color: #808080;
+  font-size: 9px;
+  display: block;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  left: 4px;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] blockList > item, doc[name="EXPL_MEMORANDUM"] .cke_editable ul[data-akn-name="UnNumberedBlockList"] > li, doc[name="EXPL_MEMORANDUM"] .cke_editable ol[data-akn-name="NumberedBlockList"] > li {
+  padding-top: 6pt;
+  padding-bottom: 6pt;
+}
+
+doc[name="EXPL_MEMORANDUM"] blockList {
+  display: block;
+}
+doc[name="EXPL_MEMORANDUM"] blockList > item {
+  display: block;
+  padding-left: 1.5cm;
+}
+doc[name="EXPL_MEMORANDUM"] blockList > item > num {
+  min-width: 1.5cm;
+  margin-left: -1.5cm;
+  display: block;
+  float: left;
+}
+doc[name="EXPL_MEMORANDUM"] blockList > item > aknP, doc[name="EXPL_MEMORANDUM"] blockList > item > p {
+  display: block;
+  position: relative;
+}
+
+doc[name="EXPL_MEMORANDUM"] .cke_editable ul[data-akn-name="UnNumberedBlockList"], doc[name="EXPL_MEMORANDUM"] .cke_editable ol[data-akn-name="NumberedBlockList"] {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+doc[name="EXPL_MEMORANDUM"] .cke_editable ul[data-akn-name="UnNumberedBlockList"] > li, doc[name="EXPL_MEMORANDUM"] .cke_editable ol[data-akn-name="NumberedBlockList"] > li {
+  padding-left: 1.5cm;
+  position: relative;
+}
+doc[name="EXPL_MEMORANDUM"] .cke_editable ul[data-akn-name="UnNumberedBlockList"] > li:before, doc[name="EXPL_MEMORANDUM"] .cke_editable ol[data-akn-name="NumberedBlockList"] > li:before {
+  color: #808080;
+  content: attr(data-akn-num);
+  min-width: 1.5cm;
+  margin-left: -1.5cm;
+  float: left;
+}
+
+doc[name="EXPL_MEMORANDUM"] .cke_editable.cke_show_blocks div[data-akn-name="blockContainer"] ul[data-akn-name="UnNumberedBlockList"] li {
+  position: relative;
+  outline: 1px dotted #808080;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding: 24px 0 8px 60.69291px;
+}
+doc[name="EXPL_MEMORANDUM"] .cke_editable.cke_show_blocks div[data-akn-name="blockContainer"] ul[data-akn-name="UnNumberedBlockList"] li:after {
+  content: "INDENT";
+  color: #808080;
+  font-size: 9px;
+  display: block;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  left: 4px;
+}
+doc[name="EXPL_MEMORANDUM"] .cke_editable.cke_show_blocks div[data-akn-name="blockContainer"] ol[data-akn-name="NumberedBlockList"] li {
+  position: relative;
+  outline: 1px dotted #808080;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  padding: 24px 0 8px 60.69291px;
+}
+doc[name="EXPL_MEMORANDUM"] .cke_editable.cke_show_blocks div[data-akn-name="blockContainer"] ol[data-akn-name="NumberedBlockList"] li:after {
+  content: "POINT";
+  color: #808080;
+  font-size: 9px;
+  display: block;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  left: 4px;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] tblock {
+  display: block;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] tblock > num, doc[name="EXPL_MEMORANDUM"] tblock > heading {
+  font-weight: bold;
+  display: table-cell;
+}
+
+doc[name="EXPL_MEMORANDUM"] tblock > num {
+  min-width: 1.5cm;
+}
+doc[name="EXPL_MEMORANDUM"] mainBody > tblock > num, doc[name="EXPL_MEMORANDUM"] mainBody > tblock > heading {
+  font-variant: small-caps;
+  padding: 18pt 0 6pt 0;
+}
+doc[name="EXPL_MEMORANDUM"] mainBody > tblock > tblock > num, doc[name="EXPL_MEMORANDUM"] mainBody > tblock > tblock > heading {
+  padding: 6pt 0;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+doc[name="EXPL_MEMORANDUM"] blockContainer {
+  display: block;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+akomaNtoso doc[name="EXPL_MEMORANDUM"] > preface > longtitle > aknp > docType[refersto="~EXPL_MEMORANDUM"] {
+  text-decoration: underline;
+}
+
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+@page {
+  margin: 2.5cm 0;
+  padding: 0;
+}
+.exportpdf coverpage {
+  padding-top: 0px;
+  padding-bottom: -250px;
+}
+
+.exportpdf coverpage container #coverpage__container_2 {
+  text-align: right;
+}
+.exportpdf coverpage container #coverpage__container_4 {
+  padding-right: -50px;
+  margin-bottom: -75px;
+}
+
+.exportpdf preface {
+  padding-top: 0px;
+}
+
+.exportpdf mainbody division content {
+  margin-left: 2.5cm;
+  margin-right: 2.5cm;
+}
+
+.exportpdf paragraph > num + content {
+  display: block;
+  clear: none;
+  margin-left: 60px;
+  padding-bottom: 0pt;
+  padding-top: 0pt;
+}
+
+akomaNtoso meta * {
+  display: none;
+}
+
+doc[name="EXPL_MEMORANDUM"] {
+  display: block;
+}

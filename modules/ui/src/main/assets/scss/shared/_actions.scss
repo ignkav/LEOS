@@ -1,0 +1,185 @@
+@charset "UTF-8";
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+*/
+
+$HEADER_BLUE:#0065A2;
+$ACTION_BORDER:#ADBDCE;
+$ACTION_BACKGROUND:#FFFAFF;
+
+%elementActions {
+
+    %elementEditable {
+        border: solid 1px transparent;
+        margin: 0 -5px;
+        padding: 0px 5px;
+        min-height: auto;
+    }
+
+    %contentEditable {
+        background-color: $ACTION_BACKGROUND;
+        border-color: $ACTION_BORDER;
+    }
+
+    [leos\:editable=true],
+    .leos-placeholder
+    {
+        @extend %elementEditable;
+    }
+
+    article {
+        @extend %elementEditable;
+    }
+
+    article.leos-editable-content {
+        @extend %contentEditable;
+    }
+
+    article[leos\:origin='ec'] {
+        .leos-editable-content, paragraph.leos-editable-content {
+            @extend %contentEditable;
+        }
+        paragraph:not(.selectable-element-paragraph), alinea {
+            @extend %elementEditable;
+        }
+        subparagraph {
+            @extend %elementEditable;
+            display: block;
+        }
+        point {
+            @extend %elementEditable;
+            padding: 0 5px 0px 45px;
+        }
+        indent {
+            @extend %elementEditable;
+            padding: 0 5px 0px 45px;
+        }
+        heading {
+            @extend %elementEditable;
+        }
+    }
+
+    part, aknTitle, chapter, section, division {
+        heading {
+            @extend %elementEditable;
+        }
+    }
+
+    block {
+        @extend %elementEditable;
+    }
+
+    citations[leos\:origin='ec'] {
+        .leos-editable-content {
+            @extend %contentEditable;
+        }
+        citation {
+            @extend %elementEditable;
+        }
+    }
+
+    recitals[leos\:origin='ec'] {
+        .leos-editable-content {
+            @extend %contentEditable;
+        }
+        recital {
+            @extend %elementEditable;
+        }
+    }
+
+    level {
+        @extend %elementEditable;
+    }
+
+    level[leos\:origin='ec'] {
+        .leos-editable-content {
+            @extend %contentEditable;
+        }
+        num {
+            border: solid 1px transparent;
+            min-height: auto;
+            display: block;
+        }
+        & > content {
+            @extend %elementEditable;
+        }
+        subparagraph {
+            @extend %elementEditable;
+            display: block;
+        }
+        point {
+            @extend %elementEditable;
+            & > list > point{
+                padding-left: 45px;
+            }
+        }
+        indent {
+            @extend %elementEditable;
+            padding-left: 45px;
+        }
+        alinea{
+            @extend %elementEditable;
+        }
+        heading {
+            @extend %elementEditable;
+            padding: 7px 0 0 5px;
+        }
+    }
+
+    paragraph {
+        @extend %elementEditable;
+    }
+
+    paragraph[leos\:origin='ec'] {
+        .leos-editable-content {
+            @extend %contentEditable;
+        }
+        subparagraph {
+            @extend %elementEditable;
+            display: block;
+        }
+        point {
+            @extend %elementEditable;
+            padding: 0 5px 0px 45px;
+        }
+        indent {
+            @extend %elementEditable;
+            padding: 0 5px 0px 45px;
+        }
+        alinea, heading {
+            @extend %elementEditable;
+        }
+    }
+
+    .leos-placeholder {
+        border-color: $ACTION_BORDER;
+    }
+
+    .leos-editable-content {
+        @extend %contentEditable;
+    }
+
+    .leos-actions, .leos-actions-icon {
+        position: absolute;
+        width: 20px;
+        user-select: none;
+        color: $HEADER_BLUE;
+        grid-column: 1;
+        * {
+            margin-top: 3px;
+            cursor: pointer;
+            display: none;
+            font-weight: normal;
+        }
+    }
+}

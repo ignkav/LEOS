@@ -1,0 +1,394 @@
+/**
+ * Copyright 2021 European Commission
+ *
+ * Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+ * You may not use this work except in compliance with the Licence.
+ * You may obtain a copy of the Licence at:
+ *
+ *     https://joinup.ec.europa.eu/software/page/eupl
+ *
+ * Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the Licence for the specific language governing permissions and limitations under the Licence.
+ */
+/*Styles for Fragment in Cross-reference dialog box.*/
+aknFragment {
+    display: block;
+    color: black;
+    background-color: white;
+    /* LegisWrite Normal style */
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    font-style: normal;
+    font-weight: normal;
+    text-align: justify;
+    line-height: 1.25em; /* extra spacing for improved readability */
+}
+
+article subparagraph {
+    clear: inherit;
+    display: block;
+}
+
+.crDialogbox {
+    border-collapse: collapse;
+    font: normal normal normal 12px Arial, Helvetica, Tahoma, Verdana, Sans-Serif;
+    white-space: normal;
+}
+
+.crTableOfContent {
+    border: 2px;
+    border-style: solid;
+    padding: 5px;
+    height: 65vh;
+    overflow: auto;
+}
+
+.crTableOfContent .leos-soft-move-label {
+    color: #FFFFFF;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline;
+    background-color: #808080;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.crContent {
+    height: 100%;
+    overflow: auto;
+}
+
+.crContent [id^=contentContainer] {
+    border: 2px;
+    border-style: solid;
+    padding: 5px;
+    height: 80%;
+    overflow-y: scroll;
+}
+
+.crContent [id^=lblRefAsValue] {
+    border: 1px;
+    border-style: solid;
+}
+
+.crContent [id^=referenceElement] {
+    padding: 10px 0 5px 0;
+}
+
+.crContent [id^=refAs] {
+    padding: 10px 0;
+}
+
+.crContent [id^=refrenceTextLabel] {
+    width: 77%;
+    font-size: inherit;
+    padding-left: 2px;
+}
+
+.selectable-element {
+    border: 1px transparent solid;
+}
+
+.selectable-element:hover {
+    border-color: #ADBDCE;
+}
+
+.selectable-element-paragraph {
+    border-left: 7px transparent solid;
+    border-top: 1px transparent solid;
+    border-right: 1px transparent solid;
+    border-bottom: 1px transparent solid;
+}
+
+.selectable-element-paragraph:hover {
+    border-color: #ADBDCE;
+}
+
+.selectable-element-selected {
+    background-color: cornsilk;
+}
+
+.selected-content {
+    width: 600px;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+.error-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+}
+
+.warning-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: blue;
+}
+
+.no-preview-available {
+    font-weight: bold;
+    text-align: center;
+}
+
+.crDialogbox [id^=brokenRefLabel] {
+    padding-top: 16px;
+}
+
+.crDialogbox [id^=brokenRefLabel] mref[leos\:broken] {
+    font-style: italic;
+}
+
+.crDialogbox [id^=brokenRefLabel] mref[leos\:broken]:after {
+    color: red;
+    display: inline;
+    font-style: normal;
+    font-family: "Vaadin-Icons";
+    content: "warning";
+    vertical-align: bottom;
+}
+
+.cke_dialog {
+    font: normal normal normal 12px Arial, Helvetica, Tahoma, Verdana, Sans-Serif;
+}
+
+.cke_dialog_tabs {
+    margin: 19px 0 0;
+}
+
+.cke_dialog_tab {
+    text-decoration: none;
+}
+
+a.cke_dialog_tab {
+    text-decoration: none;
+    height: 15px;
+    color: #6b6b6b;
+    border-color: #0066A5;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    font-weight: 500;
+    line-height: 16px;
+    border-radius: 5px 5px 0 0;
+}
+
+a.cke_dialog_tab:hover {
+    background-color: #0066A5;
+    color: #FFFFFF;
+}
+
+a.cke_dialog_tab_selected {
+    background: #0066A5;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-radius: 5px 5px 0 0;
+    border-color: #0066A5;
+}
+
+.cke_dialog_contents {
+    border-top: 1px solid #0066A5;
+    padding: unset;
+}
+
+.cke_dialog_title {
+    font-size: 14px;
+    color: #003F59;
+    border-bottom-color: rgb(209, 209, 209);
+    background: #D3DDE3;
+    letter-spacing: 0.3px;
+    border-color: rgba(183, 183, 183, 0.5);
+}
+
+.cke_dialog_footer {
+    border-top: 1px solid #0066A5;
+}
+
+.cke_single_page .cke_dialog_title {
+    font-weight: bold;
+    font-size: 12px;
+    cursor: move;
+    position: relative;
+    color: #484848;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 12px 19px 12px 12px;
+    background: #f8f8f8;
+    letter-spacing: 0.3px;
+}
+
+
+.cke_single_page .cke_dialog_footer {
+    text-align: right;
+    position: relative;
+    border-top: 1px solid #d1d1d1;
+    background: #f8f8f8;
+}
+
+a.cke_dialog_ui_button:focus, a.cke_dialog_ui_button:active, a.cke_dialog_ui_button:hover {
+    border: 2px solid #09863E;
+    outline: none;
+    padding: 3px 0;
+    background: #09863E;
+}
+
+a.cke_dialog_ui_button_ok:focus {
+    box-shadow: unset;
+}
+
+a.cke_dialog_ui_button_ok {
+    color: #fff;
+    background: #09863E;
+    border: 1px solid #09863E;
+}
+
+bill level {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: minmax(0, auto) minmax(0, 1fr) minmax(0, 1fr);
+
+}
+
+bill level num {
+    grid-column: 1;
+    grid-row: 1 / 6;
+    margin-right: 10px;
+
+}
+
+bill level heading {
+	grid-column: 2/4;
+}
+
+bill level subparagraph {
+	grid-column: 2/4;
+}
+
+bill level list {
+	grid-column: 2/4;
+    padding-left: 30px;
+
+}
+
+bill level list list {
+    float: left;
+    width: 100%;
+    clear: both;
+    text-align: left;
+}
+
+bill level num ~ subparagraph > content > aknp::before {
+    content: unset;
+}
+
+bill level subparagraph > content > aknP {
+    display: unset;
+}
+
+bill level list point {
+    float: left;
+    clear: both;
+    text-align: left;
+}
+
+bill level list indent {
+    float: left;
+    clear: both;
+    text-align: left;
+}
+
+bill article {
+    border: solid 1px transparent;
+    margin: 0 -5px;
+    padding: 0px 5px;
+    min-height: 38px;
+}
+
+bill article > num {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    padding-top: 18pt;
+    padding-bottom: 6pt;
+}
+
+bill article > heading {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 6pt;
+    padding-bottom: 6pt;
+}
+
+bill article paragraph {
+    display: block;
+    position: relative;
+}
+
+bill article paragraph > num {
+    display: block;
+    min-width: 40px;
+    float: left;
+    padding-top: 6pt;
+    padding-left: 3px;
+}
+
+bill article subparagraph > content > aknP {
+    display: block;
+    padding-top: 6pt;
+    padding-bottom: 6pt;
+    margin: 0;
+}
+
+bill article list indent > num {
+    display: block;
+    min-width: 40px;
+    float: left;
+}
+
+bill article list point {
+    padding-left: 40px;
+    display: block;
+    position: relative;
+}
+
+bill article list indent {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+}
+
+bill article list indent > content > aknP {
+    display: block;
+    padding-left: 40px;
+
+}
+
+bill article alinea {
+    display: block;
+}
+
+bill article list point > num {
+    display: block;
+    min-width: 40px;
+    float: left;
+}
+
+bill article alinea {
+    display: block;
+}
+
+bill article alinea > content > aknP {
+    padding-left: 40px;
+}
+
+bill article alinea > content > aknP, bill article alinea > content > p {
+    display: block;
+}

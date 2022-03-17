@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="package-mapping" content="search:eu.europa.ec.leos.ui.component.search"/>
+</head>
+<body>
+<vaadin-vertical-layout width-full style-name="leos-viewdoc-docbar leos-viewdoc-padbar-both" margin="false">
+        <v-horizontal-layout spacing="true" margin="false" width-full>
+                <v-form-layout size-full spacing="false" margin="false" :expand="1.0">
+                        <v-text-field _id="searchBox" style-name="inline-icon search" icon="fonticon://Vaadin-Icons/e805" immediate width-full :expand="1.0"></v-text-field>
+                </v-form-layout>
+                <v-css-layout style-name="v-component-group">
+                        <v-button _id="nextBtn" id="nextBtn" icon="fonticon://Vaadin-Icons/e7ce" enabled="false"></v-button>
+                        <v-button _id="prevBtn" id="prevBtn" icon="fonticon://Vaadin-Icons/e7d1" enabled="false"></v-button>
+                </v-css-layout>
+                <v-check-box _id="matchCase" immediate value="false" :middle="" :center="" ></v-check-box>
+                <v-check-box _id="wholeWords" immediate value="false" :middle="" :center="" ></v-check-box>
+                <v-button _id="showReplaceBarBtn" style-name="icon-only"  icon="fonticon://Vaadin-Icons/e793"></v-button>
+                <v-button _id="closeBtn" style-name="quiet icon-align-right" :bottom="" :right="" icon="fonticon://Vaadin-Icons/e7ad"></v-button>
+        </v-horizontal-layout>
+        <v-horizontal-layout _id="replaceBar" spacing="true" margin="false" width-full>
+                <v-form-layout size-full spacing="false" margin="false" :expand="1.0">
+                        <v-text-field _id="replaceBox" style-name="inline-icon search" icon="fonticon://Vaadin-Icons/e793" immediate width-full :expand="1.0"></v-text-field>
+                </v-form-layout>
+
+                <v-button _id="replaceBtn" style-name="quiet" :bottom="" :center="" enabled="false"></v-button>
+                <v-button _id="replaceAllBtn" style-name="quiet" :bottom="" :center="" enabled="false"></v-button>
+
+                <v-button _id="saveBtn" style-name="quiet" :bottom="" :right="" enabled="false" icon="fonticon://Vaadin-Icons/e717" ></v-button>
+                <v-button _id="saveAndCloseBtn" style-name="quiet" :bottom="" :right="" enabled="false" icon="fonticon://Vaadin-Icons/e718" ></v-button>
+
+        </v-horizontal-layout>
+</vaadin-vertical-layout>
+</body>Ñ
+</html>

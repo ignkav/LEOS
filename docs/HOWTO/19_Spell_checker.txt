@@ -1,0 +1,17 @@
+                            SPELL CHECKER - HOWTO
+--------------------------------------------------------------------------------
+
+Spell checker on LEOS is based in a solution provided by European Commission DGT - Directorate-General
+for Translation.
+
+Note: At this moment is not yet available for the community and it is disabled.
+
+Following properties inside 'leos.properties' filter file in config module allow to configure spell checker.
+
+# Leos spell checker
+leos.spell.checker.enabled=false
+leos.spell.checker.service.url=
+leos.spell.checker.source.url=
+
+To enable it just set enabled property to true and inform service and source url. These service and source urls
+will be provided by DGT in the future.

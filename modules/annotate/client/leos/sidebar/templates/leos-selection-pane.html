@@ -1,0 +1,69 @@
+<!--
+
+    Copyright 2021 European Commission
+
+    Licensed under the EUPL, Version 1.2 or – as soon they will be approved by the European Commission - subsequent versions of the EUPL (the "Licence");
+    You may not use this work except in compliance with the Licence.
+    You may obtain a copy of the Licence at:
+
+        https://joinup.ec.europa.eu/software/page/eupl
+
+    Unless required by applicable law or agreed to in writing, software distributed under the Licence is distributed on an "AS IS" basis,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the Licence for the specific language governing permissions and limitations under the Licence.
+
+-->
+<div class="leos-selection-pane">
+  <div>
+    <span class="leos-selection-pane__label">Select</span>
+    <button class="leos-selection-pane__button"
+      ng-click="vm.selectAllFilteredActionableAnnotations()"
+      ng-disabled="vm.isSelectAllDisabled()">Select all</button>
+    <button class="leos-selection-pane__button"
+      ng-click="vm.deselectAll()"
+      ng-disabled="vm.isDeselectAllDisabled()">Deselect all</button>
+
+    <span class="leos-selection-pane__info">
+      <span ng-if="vm.selectedAnnotationCount() > 0">
+        {{vm.selectedAnnotationCount()}}
+        <ng-container ng-if="vm.filterActive || vm.selectedTab === vm.TAB_ANNOTATIONS">annotation</ng-container><ng-container
+          ng-if="!vm.filterActive && vm.selectedTab === vm.TAB_NOTES">note</ng-container><ng-container
+          ng-if="!vm.filterActive && vm.selectedTab === vm.TAB_ORPHANS">orphan</ng-container><ng-container
+          ng-if="vm.selectedAnnotationCount() !== 1">s</ng-container>
+        selected
+        <ng-container ng-if="vm.filterActive"
+          ng-pluralize
+          count="vm.filterMatchCount"
+          when="{'0': '',
+                'one': 'out of 1 filtered result',
+                'other': 'out of {} filtered results'}"></ng-container>
+      </span>
+      <span ng-if="vm.selectedAnnotationCount() === 0">Click on annotations to select them.
+        <ng-container
+          ng-if="vm.filterActive"
+          ng-pluralize
+          count="vm.filterMatchCount"
+          when="{'0': '',
+                'one': '1 filtered result',
+                'other': '{} filtered results'}"></ng-container>
+      </span>
+    </span>
+  </div>
+  <div class="leos-selection-pane__actions-section">
+    <span class="leos-selection-pane__label">Actions over selected annotations</span>
+    <button class="leos-selection-pane__button"
+      ng-click="vm.accept()"
+      ng-disabled="vm.isAcceptAndRejectDisabled()"
+      ng-if="vm.isAcceptAndRejectShown()"
+      title="Accept selected suggestions">Accept</button>
+    <button class="leos-selection-pane__button"
+      ng-click="vm.reject()"
+      ng-disabled="vm.isAcceptAndRejectDisabled()"
+      ng-if="vm.isAcceptAndRejectShown()"
+      title="Reject selected suggestions">Reject</button>
+    <button class="leos-selection-pane__button"
+      ng-click="vm.delete()"
+      ng-disabled="vm.isDeleteDisabled()"
+      title="Delete selected annotations">Delete</button>
+  </div>
+</div>
