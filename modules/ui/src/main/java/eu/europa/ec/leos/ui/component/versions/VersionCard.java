@@ -214,13 +214,10 @@ public class VersionCard<D extends XmlDocument> extends VerticalLayout {
             actionsMenuBar.createMenuItem(messageHelper.getMessage("document.version.actions.revert"),
                     selectedItem -> restoreVersion(versionVO));
     
-            boolean canDownload = securityContext.hasPermission(null, LeosPermission.CAN_DOWNLOAD_XML_COMPARISON);
-            if(canDownload){
-                actionsMenuBar.createMenuItem(messageHelper.getMessage("menu.actions.download.version"),
-                            selectedItem -> downloadVersion(versionVO));
-                actionsMenuBar.createMenuItem(messageHelper.getMessage("menu.actions.download.docx"),
-                        selectedItem -> downloadDocx(versionVO));
-            }
+            actionsMenuBar.createMenuItem(messageHelper.getMessage("menu.actions.download.version"),
+                        selectedItem -> downloadVersion(versionVO));
+            actionsMenuBar.createMenuItem(messageHelper.getMessage("menu.actions.download.docx"),
+                    selectedItem -> downloadDocx(versionVO));
         }
         if (versionVO.getVersionType() == VersionType.MAJOR) {
             actionsMenuBar.createMenuItem(messageHelper.getMessage("document.version.actions.exploreMilestone"),

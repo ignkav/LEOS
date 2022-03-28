@@ -38,6 +38,8 @@ import eu.europa.ec.leos.services.export.ExportVersions;
 import eu.europa.ec.leos.ui.component.LeosDisplayField;
 import eu.europa.ec.leos.ui.event.EnableSyncScrollRequestEvent;
 import eu.europa.ec.leos.ui.event.view.DownloadXmlFilesRequestEvent;
+import eu.europa.ec.leos.ui.event.view.DownloadLRRequestEvent;
+import eu.europa.ec.leos.ui.event.view.DownloadPRequestEvent;
 import eu.europa.ec.leos.ui.event.view.LegisWriteExportRequestEvent;
 import eu.europa.ec.leos.ui.extension.MathJaxExtension;
 import eu.europa.ec.leos.ui.extension.ScrollPaneExtension;
@@ -69,6 +71,8 @@ public abstract class MarkedTextComponent<T extends XmlDocument> extends CustomC
     private Button markedTextNextButton;
     private Button markedTextPrevButton;
     private Button downloadXmlFilesButton;
+    private Button lrButton; 
+    private Button projectButton;
     private SimpleFileDownloader simpleFileDownloader;
     private Label versionLabel;
 
@@ -123,6 +127,18 @@ public abstract class MarkedTextComponent<T extends XmlDocument> extends CustomC
             eventBus.post(new DownloadXmlFilesRequestEvent(this.exportOptions));
         });
     }
+
+    private void addDownloadLRButtonClickListener(){
+        lrButton.addClickListener((Button.ClickListener) event -> {
+            eventBus.post(new DownloadLRRequestEvent(this.exportOptions));
+        });
+    }
+
+    private void addDownloadPButtonClickListener(){
+        projectButton.addClickListener((Button.ClickListener) event -> {
+            eventBus.post(new DownloadPRequestEvent(this.exportOptions));
+        });
+    }
     
     private void initexportToLegiswriteDownloader() {
         this.exportToLegiswriteDownloader = new SimpleFileDownloader();
@@ -137,8 +153,7 @@ public abstract class MarkedTextComponent<T extends XmlDocument> extends CustomC
 
     public void showDownloadXmlFilesButton(boolean visible){
         if(visible){
-            boolean canDownload = securityContext.hasPermission(null, LeosPermission.CAN_DOWNLOAD_XML_COMPARISON);
-            downloadXmlFilesButton.setVisible(canDownload);
+            downloadXmlFilesButton.setVisible(true);
         } else {
             downloadXmlFilesButton.setVisible(false);
         }
@@ -188,6 +203,14 @@ public abstract class MarkedTextComponent<T extends XmlDocument> extends CustomC
         toolsLayout.setComponentAlignment(versionLabel, Alignment.MIDDLE_CENTER);
         toolsLayout.setExpandRatio(versionLabel,1.0f);
 
+        lrButton = lyginamojiRedakcija();
+        toolsLayout.addComponent(lrButton);
+        toolsLayout.setComponentAlignment(lrButton, Alignment.MIDDLE_RIGHT);
+
+        projectButton = projektas();
+        toolsLayout.addComponent(projectButton);
+        toolsLayout.setComponentAlignment(projectButton, Alignment.MIDDLE_RIGHT);
+
         downloadXmlFilesButton = downloadXmlFilesButton();
         toolsLayout.addComponent(downloadXmlFilesButton);
         toolsLayout.setComponentAlignment(downloadXmlFilesButton, Alignment.MIDDLE_RIGHT);
@@ -209,6 +232,20 @@ public abstract class MarkedTextComponent<T extends XmlDocument> extends CustomC
         downloadXmlFilesButton.addStyleName("link leos-toolbar-button");
         downloadXmlFilesButton.setIcon(VaadinIcons.CLOUD_DOWNLOAD);
         return downloadXmlFilesButton;
+    }
+
+    private Button lyginamojiRedakcija() {
+        Button lrButton = new Button();
+        lrButton.setDescription("Lyginamoji redakcija");
+        lrButton.setCaption("LR");
+        return lrButton;
+    }
+
+    private Button projektas() {
+        Button projectButton = new Button();
+        projectButton.setDescription("Projektas");
+        projectButton.setCaption("P");
+        return projectButton;
     }
 
     private Button closeMarkedTextComponent() {
@@ -322,6 +359,8 @@ public abstract class MarkedTextComponent<T extends XmlDocument> extends CustomC
     public void hideCompareButtons() {
         markedTextNextButton.setVisible(false);
         markedTextPrevButton.setVisible(false);
+        lrButton.setVisible(false);
+        projectButton.setVisible(false);
         showDownloadXmlFilesButton(false);
         hideExportToLegiswriteButton();
     }
@@ -330,6 +369,8 @@ public abstract class MarkedTextComponent<T extends XmlDocument> extends CustomC
         syncScrollSwitch.setVisible(true);
         markedTextNextButton.setVisible(true);
         markedTextPrevButton.setVisible(true);
+        lrButton.setVisible(true);
+        projectButton.setVisible(true);
         showDownloadXmlFilesButton(true);
         if (!this.alwaysHideExportToLegiswriteButton){
             showExportToLegiswriteButton();
@@ -359,6 +400,8 @@ public abstract class MarkedTextComponent<T extends XmlDocument> extends CustomC
     public void setExportOptions(ExportOptions exportOptions){
         this.exportOptions = exportOptions;
         this.addDownloadXmlFilesButtonClickListener();
+        this.addDownloadLRButtonClickListener();
+        this.addDownloadPButtonClickListener();
         this.addLegiswriteButtonClickListener();
     }
 

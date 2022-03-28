@@ -322,8 +322,7 @@ public class DoubleComparisonComponent<T extends XmlDocument> extends CustomComp
     
     public void showDownloadXmlFilesButton(boolean visible){
         if(visible){
-            boolean canDownload = securityContext.hasPermission(null, LeosPermission.CAN_DOWNLOAD_XML_COMPARISON);
-            downloadXmlFilesButton.setVisible(canDownload);
+            downloadXmlFilesButton.setVisible(true);
         } else {
             downloadXmlFilesButton.setVisible(false);
         }
